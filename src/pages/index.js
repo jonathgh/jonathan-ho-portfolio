@@ -1,7 +1,12 @@
 import React from "react"
 import Layout from "../components/Layout"
+//import ScriptTag from 'react-script-tag';
 
-export default function Home() {
+const scatterObj = props => (
+  <ScriptTag type="text/javascript" src="./src/js/scatter.js" />
+  )
+
+export default function Home( { scatterObj }) {
   return (
       <div>
         <section>

@@ -14,9 +14,15 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@react-three/drei": "^8.10.6",
+    "@react-three/fiber": "^7.0.26",
+    "babel-plugin-glsl": "^1.0.0",
     "gatsby": "^4.8.0",
+    "glsl-noise": "^0.0.0",
+    "glslify": "^7.1.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "three": "^0.138.0"
   },
   "devDependencies": {
     "prettier": "^2.5.1"
