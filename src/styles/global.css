@@ -94,7 +94,7 @@ body,
     */
     text-align: center;
     align-self: center;
-    font-weight: 100;
+    font-weight: 200;
     letter-spacing: 1vw;
     font-size: 2vw;
     padding: 0.5vw;
@@ -152,12 +152,13 @@ Canvas {
     /* display: flex; */
     color: hsla(192, 18%, 49%, 1);
     text-decoration: none;
-    padding-top: 5vw;
+    padding-top: 8vw;
     padding-inline-start: 6vw;
     padding-inline-end: 6vw;
     font-size: 2vw;
     align-items: center;
     justify-content: center;
     text-align: center;
-    border: 3px solid rgb(255, 0, 0);
+    font-size: 1.2vw;
+    /* border: 3px solid rgb(255, 0, 0); */
 }
