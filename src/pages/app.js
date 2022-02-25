@@ -286,7 +286,6 @@ const App = () => {
   return (
     <div className="top-level-div">
         <div className="container disable-select">
-
             <div className="heading-title">JONATHAN HO</div>
             <div className="sub-heading">Creative Technologist | VFX Artist | Sound Designer</div>
             <div className="links home-footer">
