@@ -37,12 +37,12 @@ body,
     
   }
 
-.cnv, #asdf {
+/* .cnv {
     position: fixed;
     top: 0;
-    height: 10%;
-    overflow-y: hidden;
-}
+    /* height: 10%; */
+    /* overflow-y: hidden; */
+/* } */
 
 Canvas {
     box-sizing: border-box;

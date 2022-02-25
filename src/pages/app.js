@@ -1,54 +1,18 @@
 import React, { useRef, Suspense } from "react"
 import { Link } from 'gatsby'
 import { Canvas, extend, useFrame } from "@react-three/fiber"
-import { shaderMaterial } from "@react-three/drei"
+import { shaderMaterial, OrthographicCamera } from "@react-three/drei"
 import glsl from "babel-plugin-glsl/macro"
 import * as THREE from "three"
 import "../styles/three.css"
 
 //credit: https://cat-change-b22.notion.site/Wave-Shader-0fa66aef851745248a99153f3a479124
 
-//TODO: get canvas width and height:
-// const { width, height } = canvas.getBoundingClientRect()
-
-
-
-// let canvasH = 1.0 * window.innerHeight;
-// let canvasW = 1.0 * window.innerWidth;
-
-// const canvas = document.querySelector("Canvas");
-// canvas.width = document.body.clientWidth;
-// canvas.height = document.body.clientHeight;
-// canvasW = canvas.width;
-// canvasH = canvas.height;
-
-// console.log(canvasH);
-
-// window.addEventListener('resize', () => {
-//     // return canvasRes = {
-//         console.log("added event listener");
-//         canvasH = 1.0 * window.innerHeight
-//         canvasW = 1.0 * window.innerWidth
-//     }
-    
-// )
-
-// useEffect(() => {
-//     window.addEventListener('resize', setDimension);
-    
-//     return(() => {
-//         window.removeEventListener('resize', setDimension);
-//     })
-//   }, [screenSize])
-
-// window.dispatchEvent(new Event('resize'))
-
 const WaveShaderMaterial = shaderMaterial(
   // Uniforms
     { 
         iTime: 0,
-        uColor: new THREE.Color(0.0, 0.0, 0.0),
-        iResolution: new THREE.Vector3(1.0 * window.innerWidth, 1.0 * window.innerHeight, 1.0)
+        iResolution: new THREE.Vector3(1.0 * window.innerWidth, 1080.0, 1.0) //1.0 * window.innerWidth, 1.0 * window.innerHeight, 1.0
     },
 
   // Vertex Shader
@@ -263,20 +227,31 @@ const Plane = () => {
         ref.current.iResolution = new THREE.Vector3(1.0 * window.innerWidth, 1.0 * window.innerHeight, 1.0)
     });
 
-
     return (
       <mesh>
-        <planeBufferGeometry args={[10, 10]} />
+        <planeBufferGeometry args={[50, 50]} />
         <waveShaderMaterial ref={ref} />
       </mesh>
     );
   };
 
+// const Camera = () => {
+//     const cam = useRef()
+//     const { setDefaultCamera } = useThree()
+//     useLayoutEffect(() => setDefaultCamera(cam.current), [])
+//     return <orthographicCamera ref={ref} left={ -1 } right={ 1 } top={ 1 } bottom={ -1 } near={ -1 } far={ 1 } />
+// }
+
 const Scene = () => {
   return (
     <Canvas className="cnv" > 
+        
         <Suspense fallback={null}>
-            <Plane />
+            {/* <Camera /> */}
+            {/* <OrthographicCamera makeDefault left={ -1 } right={ 1 } top={ 1 } bottom={ -1 } near={ -1 } far={ 1 }> */}
+                <Plane />
+            {/* </OrthographicCamera> */}
+            
         </Suspense>
     </Canvas>
   )
