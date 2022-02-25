@@ -1,40 +1,43 @@
 import React from "react"
-import Layout from "../components/Layout"
+// import Layout from "../components/Layout"
 //import ScriptTag from 'react-script-tag';
 
-const scatterObj = props => (
-  <ScriptTag type="text/javascript" src="./src/js/scatter.js" />
-  )
+// const scatterObj = props => (
+//   <ScriptTag type="text/javascript" src="./src/js/scatter.js" />
+//   )
 
-export default function Home( { scatterObj }) {
+export default function Home() {
   return (
-      <div>
-        <section>
-        <div id="container" class="disable-select">
+    <div>
+      <section>
+        <div id="container" className="disable-select">
           <canvas id="c"></canvas>
           <div id="overlay">
-            <div class="headingTitle">JONATHAN HO</div>
-            <div class="subheading">
+            <div className="headingTitle">JONATHAN HO</div>
+            <div className="subheading">
               Creative Technologist | VFX Artist | Sound Designer
             </div>
             <footer id="footer">
-              <ul class="menu-items">
-                <li class="menu-item menu-work" data-link="work">
+              <ul className="menu-items">
+                <li className="menu-item menu-work" data-link="work">
                   work
                 </li>
-                <li class="menu-item menu-prototypes" data-link="prototypes">
+                <li
+                  className="menu-item menu-prototypes"
+                  data-link="prototypes"
+                >
                   prototypes
                 </li>
-                <li class="menu-item menu-art" data-link="art">
+                <li className="menu-item menu-art" data-link="art">
                   art
                 </li>
-                <li class="menu-item menu-press" data-link="education">
+                <li className="menu-item menu-press" data-link="education">
                   education
                 </li>
-                <li class="menu-item menu-info" data-link="cv">
+                <li className="menu-item menu-info" data-link="cv">
                   cv
                 </li>
-                <li class="menu-item menu-reel" data-link="reel">
+                <li className="menu-item menu-reel" data-link="reel">
                   reel
                 </li>
               </ul>
@@ -42,10 +45,6 @@ export default function Home( { scatterObj }) {
           </div>
         </div>
       </section>
-
-
-        <script type="module" src="./src/js/scatter.js"></script>
-      </div>
-      
+    </div>
   )
 }

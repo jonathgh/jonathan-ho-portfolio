@@ -5,10 +5,10 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    /* background-color: black; */
+    background-color: black;
 }
 
-/* #container {
+#container {
     position: absolute;
     top: 0%;
     left: 0%;
@@ -16,8 +16,8 @@ body {
     bottom: 0%;
     display: grid;
     grid-template-rows: 10% 20% 10% 20% 10% 20% 10%; /* repeat(5, 1fr); */
-    /* grid-template-columns: 10% 20% 10% 20% 10% 20% 10%; repeat(5, 1fr); */
-/* } */
+    grid-template-columns: 10% 20% 10% 20% 10% 20% 10%; /* repeat(5, 1fr); */
+}
 
 /* #container canvas, */
 #overlay {
@@ -108,18 +108,3 @@ body {
     -ms-user-select: none; /* Internet Explorer or Edge */
     user-select: none; /* All modern browsers */
 }
-
-  /* credit: https://dev.to/greggoms/comment/ef3a */
-  #gatsby-focus-wrapper {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  
-  #___gatsby {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
