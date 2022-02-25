@@ -12,7 +12,7 @@ const WaveShaderMaterial = shaderMaterial(
   // Uniforms
     { 
         iTime: 0,
-        iResolution: new THREE.Vector3(1.0 * window.innerWidth, 1080.0, 1.0) //1.0 * window.innerWidth, 1.0 * window.innerHeight, 1.0
+        iResolution: new THREE.Vector3(1.0 * window.innerWidth, 1.0 * window.innerWidth, 1.0) //1.0 * window.innerWidth, 1.0 * window.innerHeight, 1.0
     },
 
   // Vertex Shader
@@ -261,15 +261,19 @@ const App = () => {
   return (
     <div className="top-level-div">
         <div className="container disable-select">
-            <div className="heading-title">JONATHAN HO</div>
-            <div className="sub-heading">Creative Technologist | VFX Artist | Sound Designer</div>
-            <div className="links home-footer">
-              <Link to="/">Home</Link>
-              <Link to="/work">Work</Link>
-              <Link to="/art">Art</Link>
-              <Link to="/experiments">Experiments</Link>
-              <Link to="/about">About</Link>
+            <div className="home-vert-center-text">
+                
+                <div className="heading-title">JONATHAN HO</div>
+                <div className="sub-heading">Creative Technologist | VFX Artist | Sound Designer</div>
+                <div className="links-home-footer">
+                    <Link className="home-footer-link-item" to="/">HOME</Link>
+                    <Link className="home-footer-link-item" to="/work">WORK</Link>
+                    <Link className="home-footer-link-item" to="/art">ART</Link>
+                    <Link className="home-footer-link-item" to="/experiments">EXPERIMENTS</Link>
+                    <Link className="home-footer-link-item" to="/about">ABOUT</Link>
+                </div>
             </div>
+            
             <div className="cnv-container">
                 <Scene className="scn" />
             </div>
