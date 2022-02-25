@@ -108,3 +108,6 @@ body {
     -ms-user-select: none; /* Internet Explorer or Edge */
     user-select: none; /* All modern browsers */
 }
+
+
+/* camera={{ fov: 10, position: [0, 0, 0] }}

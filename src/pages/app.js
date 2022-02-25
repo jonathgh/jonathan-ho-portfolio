@@ -1,4 +1,5 @@
 import React, { useRef, Suspense } from "react"
+import { Link } from 'gatsby'
 import { Canvas, extend, useFrame } from "@react-three/fiber"
 import { shaderMaterial } from "@react-three/drei"
 import glsl from "babel-plugin-glsl/macro"
@@ -10,12 +11,44 @@ import "../styles/three.css"
 //TODO: get canvas width and height:
 // const { width, height } = canvas.getBoundingClientRect()
 
+
+
+// let canvasH = 1.0 * window.innerHeight;
+// let canvasW = 1.0 * window.innerWidth;
+
+// const canvas = document.querySelector("Canvas");
+// canvas.width = document.body.clientWidth;
+// canvas.height = document.body.clientHeight;
+// canvasW = canvas.width;
+// canvasH = canvas.height;
+
+// console.log(canvasH);
+
+// window.addEventListener('resize', () => {
+//     // return canvasRes = {
+//         console.log("added event listener");
+//         canvasH = 1.0 * window.innerHeight
+//         canvasW = 1.0 * window.innerWidth
+//     }
+    
+// )
+
+// useEffect(() => {
+//     window.addEventListener('resize', setDimension);
+    
+//     return(() => {
+//         window.removeEventListener('resize', setDimension);
+//     })
+//   }, [screenSize])
+
+// window.dispatchEvent(new Event('resize'))
+
 const WaveShaderMaterial = shaderMaterial(
   // Uniforms
     { 
         iTime: 0,
         uColor: new THREE.Color(0.0, 0.0, 0.0),
-        iResolution: new THREE.Vector3(1920.0, 1080.0, 1.0)
+        iResolution: new THREE.Vector3(1.0 * window.innerWidth, 1.0 * window.innerHeight, 1.0)
     },
 
   // Vertex Shader
@@ -225,72 +258,50 @@ extend({ WaveShaderMaterial })
 
 const Plane = () => {
     const ref = useRef();
-    useFrame(({ clock }) => (ref.current.iTime = clock.getElapsedTime()));
+    useFrame(({ clock }) => {
+        (ref.current.iTime = clock.getElapsedTime())
+        ref.current.iResolution = new THREE.Vector3(1.0 * window.innerWidth, 1.0 * window.innerHeight, 1.0)
+    });
+
 
     return (
       <mesh>
-        <planeBufferGeometry args={[3, 5]} />
-        <waveShaderMaterial uColor='hotpink' ref={ref} />
+        <planeBufferGeometry args={[10, 10]} />
+        <waveShaderMaterial ref={ref} />
       </mesh>
     );
   };
 
 const Scene = () => {
   return (
-    <Canvas className="canvas" camera={{ fov: 10, position: [0, 0, 5] }}>
-      <Suspense fallback={null}>
-        <Plane />
-      </Suspense>
+    <Canvas className="cnv" > 
+        <Suspense fallback={null}>
+            <Plane />
+        </Suspense>
     </Canvas>
   )
 }
 
 const App = () => {
   return (
-    <div>
-      <section>
-        <div id="container" className="disable-select">
-            {/* <canvas id="c"></canvas> */}
-            <Scene id="c" />
-            <div id="overlay">
-            <div className="headingTitle">JONATHAN HO</div>
-            <div className="subheading">
-                Creative Technologist | VFX Artist | Sound Designer
+    <div className="top-level-div">
+        <div className="container disable-select">
+
+            <div className="heading-title">JONATHAN HO</div>
+            <div className="sub-heading">Creative Technologist | VFX Artist | Sound Designer</div>
+            <div className="links home-footer">
+              <Link to="/">Home</Link>
+              <Link to="/work">Work</Link>
+              <Link to="/art">Art</Link>
+              <Link to="/experiments">Experiments</Link>
+              <Link to="/about">About</Link>
             </div>
-            <footer id="footer">
-                <ul className="menu-items">
-                <li className="menu-item menu-work" data-link="work">
-                    work
-                </li>
-                <li
-                    className="menu-item menu-prototypes"
-                    data-link="prototypes"
-                >
-                    prototypes
-                </li>
-                <li className="menu-item menu-art" data-link="art">
-                    art
-                </li>
-                <li className="menu-item menu-press" data-link="education">
-                    education
-                </li>
-                <li className="menu-item menu-info" data-link="cv">
-                    cv
-                </li>
-                <li className="menu-item menu-reel" data-link="reel">
-                    reel
-                </li>
-                </ul>
-            </footer>
+            <div className="cnv-container">
+                <Scene className="scn" />
             </div>
         </div>
-      </section>
   </div>
     )
 }
 
 export default App
-
-// void main() {
-//     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-//   }

@@ -1,10 +1,6 @@
 import React from "react"
 // import Layout from "../components/Layout"
-//import ScriptTag from 'react-script-tag';
 
-// const scatterObj = props => (
-//   <ScriptTag type="text/javascript" src="./src/js/scatter.js" />
-//   )
 
 export default function Home() {
   return (
@@ -17,6 +13,9 @@ export default function Home() {
             <div className="subheading">
               Creative Technologist | VFX Artist | Sound Designer
             </div>
+            
+            
+            
             <footer id="footer">
               <ul className="menu-items">
                 <li className="menu-item menu-work" data-link="work">
