@@ -8,8 +8,6 @@ import * as THREE from "three"
 import "../styles/global.css"
 import Layout from "../components/Layout.js"
 import ContentItem from "../components/ContentItem"
-import ContentThumb from "../components/ContentThumb"
-import ContentDescription from "../components/ContentDescription"
 import projectThumb01 from '../imgs/proj-thumb-01.jpg';
 
 
@@ -165,7 +163,7 @@ const Plane = () => {
   return (
     <mesh>
       <planeBufferGeometry args={[50, 50]} />
-      <SunsetShaderMaterial ref={ref} />
+      <sunsetShaderMaterial ref={ref} />
     </mesh>
   )
 }
@@ -240,10 +238,8 @@ function useMousePosition(throttleTime = 100) {
                             <ContentItem thumbSrc={projectThumb01} thumbAlt={"project thumbnail"} description={"Proident ullamco laborum reprehenderit anim cillum. Minim incididunt aliquip ipsum sunt qui eiusmod irure consectetur labore incididunt commodo elit adipisicing. Eiusmod cillum laborum laboris adipisicing do dolor sunt adipisicing occaecat id aliqua. Irure do voluptate minim reprehenderit. Ullamco cupidatat duis Lorem velit nisi aliqua est dolore ut excepteur id laborum anim adipisicing."} />
                         </div>
                     </div>
-                    
-                    
                     <div className="cnv-container">
-                        <Scene className="scn" />
+                        <Scene />
                     </div>
             </div>
         </div>
