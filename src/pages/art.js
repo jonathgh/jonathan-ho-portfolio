@@ -7,14 +7,15 @@ import glsl from "babel-plugin-glsl/macro"
 import * as THREE from "three"
 import "../styles/global.css"
 import Layout from "../components/Layout.js"
-
-let mousePos;
-
+import ContentItem from "../components/ContentItem"
+import ContentThumb from "../components/ContentThumb"
+import ContentDescription from "../components/ContentDescription"
+import projectThumb01 from '../imgs/proj-thumb-01.jpg';
 
 
 //credit: https://cat-change-b22.notion.site/Wave-Shader-0fa66aef851745248a99153f3a479124
 
-const WaveShaderMaterial = shaderMaterial(
+const SunsetShaderMaterial = shaderMaterial(
   // Uniforms
   {
     iTime: 0,
@@ -137,7 +138,7 @@ const WaveShaderMaterial = shaderMaterial(
     `
 )
 
-extend({ WaveShaderMaterial })
+extend({ SunsetShaderMaterial })
 
 const Plane = () => {
   const ref = useRef()
@@ -164,7 +165,7 @@ const Plane = () => {
   return (
     <mesh>
       <planeBufferGeometry args={[50, 50]} />
-      <waveShaderMaterial ref={ref} />
+      <SunsetShaderMaterial ref={ref} />
     </mesh>
   )
 }
@@ -188,29 +189,6 @@ const Scene = () => {
     </Canvas>
   )
 }
-
-const Art = () => {
-  return (
-    <div className="top-level-div">
-      <div className="container disable-select">
-        <Layout>
-          <div className="page-top-center-text">
-            <div className="page-heading-title">ART</div>
-            <div className="page-sub-heading">
-              Creative Projects in Generative Art
-            </div>
-            <div className="cnv-container">
-              <Scene className="scn" />
-            </div>
-          </div>
-        </Layout>
-      </div>
-    </div>
-  )
-}
-
-export default Art
-
 
 //poll mouse pos at regular intervals  credit: https://world.hey.com/david.harting/using-the-mouse-position-with-react-hooks-and-rxjs-94883bc0
 function useMousePosition(throttleTime = 100) {
@@ -242,3 +220,34 @@ function useMousePosition(throttleTime = 100) {
       mouseY: y,
     }
   }
+
+  const Art = () => {
+    return (
+        <div className="top-level-div">
+            <div className="container disable-select">
+                <Layout />
+                    <div className="page-top-center-text">
+                        <div className="page-heading-title">
+                            ART
+                        </div>
+                        <div className="page-sub-heading">
+                            Creative Projects in Generative Art
+                        </div>
+                        <div className="content-grid">
+                            <ContentItem thumbSrc={projectThumb01} thumbAlt={"project thumbnail"} description={"Proident ullamco laborum reprehenderit anim cillum. Minim incididunt aliquip ipsum sunt qui eiusmod irure consectetur labore incididunt commodo elit adipisicing. Eiusmod cillum laborum laboris adipisicing do dolor sunt adipisicing occaecat id aliqua. Irure do voluptate minim reprehenderit. Ullamco cupidatat duis Lorem velit nisi aliqua est dolore ut excepteur id laborum anim adipisicing."} />
+                            <ContentItem thumbSrc={projectThumb01} thumbAlt={"project thumbnail"} description={"Proident ullamco laborum reprehenderit anim cillum. Minim incididunt aliquip ipsum sunt qui eiusmod irure consectetur labore incididunt commodo elit adipisicing. Eiusmod cillum laborum laboris adipisicing do dolor sunt adipisicing occaecat id aliqua. Irure do voluptate minim reprehenderit. Ullamco cupidatat duis Lorem velit nisi aliqua est dolore ut excepteur id laborum anim adipisicing."} />
+                            <ContentItem thumbSrc={projectThumb01} thumbAlt={"project thumbnail"} description={"Proident ullamco laborum reprehenderit anim cillum. Minim incididunt aliquip ipsum sunt qui eiusmod irure consectetur labore incididunt commodo elit adipisicing. Eiusmod cillum laborum laboris adipisicing do dolor sunt adipisicing occaecat id aliqua. Irure do voluptate minim reprehenderit. Ullamco cupidatat duis Lorem velit nisi aliqua est dolore ut excepteur id laborum anim adipisicing."} />
+                            <ContentItem thumbSrc={projectThumb01} thumbAlt={"project thumbnail"} description={"Proident ullamco laborum reprehenderit anim cillum. Minim incididunt aliquip ipsum sunt qui eiusmod irure consectetur labore incididunt commodo elit adipisicing. Eiusmod cillum laborum laboris adipisicing do dolor sunt adipisicing occaecat id aliqua. Irure do voluptate minim reprehenderit. Ullamco cupidatat duis Lorem velit nisi aliqua est dolore ut excepteur id laborum anim adipisicing."} />
+                        </div>
+                    </div>
+                    
+                    
+                    <div className="cnv-container">
+                        <Scene className="scn" />
+                    </div>
+            </div>
+        </div>
+    )
+  }
+  
+  export default Art

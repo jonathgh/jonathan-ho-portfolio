@@ -14,9 +14,6 @@ body,
 
 .container {
     position: absolute;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     height: 100%;
     width: 100%;
 
@@ -34,7 +31,7 @@ body,
     /* padding: 0; */
     /* margin: 0; */
     font-family: 'futura-pt';
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     /* justify-self: center; */
     /* align-self: center; */
     color: hsla(192, 18%, 49%, 1);
@@ -43,6 +40,13 @@ body,
     /* border: 3px solid rgb(255, 174, 0); */
   }
 
+  .home-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
 /* .cnv {
     position: fixed;
     top: 0;
@@ -164,21 +168,97 @@ Canvas {
 }
 
 .page-top-center-text {
-
+    /* border: 3px solid rgb(251, 255, 0); */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    
 }
 
 .page-heading-title{
-
+    /* border: 3px solid rgb(0, 255, 64); */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 7vw;
+    font-weight: 400;
+    padding-top: 8%;
 }
 
 .page-sub-heading{
-
+    /* border: 3px solid rgb(25, 0, 255); */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .nav-links {
-
+    /* border: 3px solid rgb(255, 0, 200); */
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 0;
+    right: 3%;
+    padding: 2%;
+    
 }
 
 .nav-link {
+    /* border: 3px solid rgb(0, 183, 255); */
+    justify-content: center;
+    align-items: center;
+    padding-inline-start: 1%;
+    padding-inline-end: 1%;
+    color: hsla(192, 18%, 49%, 1);
+    text-decoration: none;
+    font-size: 1vw;
+}
+
+.content-grid {
+    /* border: 3px solid rgb(47, 0, 255); */
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    padding: 5%;
+    align-items: top;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* flex: 1 1 200px; */
     
+}
+
+.content-box-outline {
+    /* border: 3px solid rgb(255, 0, 0); */
+    display: flex;
+    flex-direction: column;
+    /* padding: 5%; */
+    height: 30vh;
+    width: 20vw;
+    flex-grow: 5%;
+    flex-shrink: 5%;
+}
+
+.project-thumb {
+    /* border: 3px solid rgb(49, 124, 65); */
+    object-fit: scale-down;
+    height: 160px;
+    width: auto;
+    overflow: hidden;
+    padding: 5%;
+    max-width: 160px;
+
+}
+.thumbnail {
+    max-width: fit-content;
+    max-height: max-content;
+}
+
+.content-description {
+    /* border: 3px solid rgb(126, 113, 70); */
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
 }
