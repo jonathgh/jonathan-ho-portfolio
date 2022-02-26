@@ -14,15 +14,20 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@react-three/drei": "^8.11.0",
     "@react-three/fiber": "^7.0.26",
     "@react-three/postprocessing": "^2.1.5",
     "babel-plugin-glsl": "^1.0.0",
     "drei": "^2.2.21",
     "gatsby": "^4.8.0",
+    "gatsby-plugin-manifest": "^4.8.1",
+    "gatsby-plugin-sass": "^5.8.0",
     "glsl-noise": "^0.0.0",
     "glslify": "^7.1.1",
+    "node-sass": "^7.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-images": "^1.2.0-beta.7",
     "rxjs": "^7.5.4",
     "three": "^0.138.0",
     "three-stdlib": "^2.8.7"

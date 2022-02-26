@@ -168,16 +168,16 @@ Canvas {
 }
 
 .page-top-center-text {
-    border: 3px solid rgb(251, 255, 0);
+    /* border: 3px solid rgb(251, 255, 0); */
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     
 }
 
 .page-heading-title{
-    border: 3px solid rgb(0, 255, 64);
+    /* border: 3px solid rgb(0, 255, 64); */
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -187,14 +187,14 @@ Canvas {
 }
 
 .page-sub-heading{
-    border: 3px solid rgb(25, 0, 255);
+    /* border: 3px solid rgb(255, 0, 0); */
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
 .nav-links {
-    border: 3px solid rgb(255, 0, 200);
+    /* border: 3px solid rgb(255, 0, 200); */
     display: flex;
     flex-direction: row;
     position: absolute;
@@ -205,7 +205,7 @@ Canvas {
 }
 
 .nav-link {
-    border: 3px solid rgb(0, 183, 255);
+    /* border: 3px solid rgb(0, 183, 255); */
     justify-content: center;
     align-items: center;
     padding-inline-start: 1%;
@@ -216,49 +216,62 @@ Canvas {
 }
 
 .content-grid {
-    border: 3px solid rgb(47, 0, 255);
+    /* border: 3px solid rgb(47, 0, 255); */
     position: relative;
     display: flex;
     flex-direction: row;
     width: auto;
     height: auto;
     padding: 5%;
-    align-items: top;
-    justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: left;
+    /* flex-wrap: wrap; */
     /* flex: 1 1 200px; */
     
 }
 
-.content-box-outline {
-    border: 3px solid rgb(255, 0, 0);
+.row {
     display: flex;
-    flex-direction: column;
-    padding: 5%;
-    height: 30vh;
-    width: 20vw;
-    flex-grow: 5%;
-    flex-shrink: 5%;
+    flex: column;
+    flex-wrap: wrap;
 }
 
-.project-thumb {
+article {
+    /* border: 3px solid rgb(0, 255, 34); */
+    padding: 5%;
+}
+
+/* .content-box-outline {
+    border: 3px solid rgb(255, 0, 0); */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* padding: 5%; */
+    /* height: 30vh; */
+    /* width: 20vw; */
+    /* flex-grow: 5%;
+    flex-shrink: 5%;
+    flex-basis: 5vw; */
+    
+/* } */
+
+/* .project-thumb {
     border: 3px solid rgb(49, 124, 65);
     object-fit: scale-down;
     height: 160px;
     width: auto;
     overflow: hidden;
-    padding: 5%;
-    max-width: 160px;
+    padding: 5%; */
+    /* max-width: 160px; */
 
-}
-.thumbnail {
+/* } */
+/* .thumbnail {
     max-width: fit-content;
     max-height: max-content;
-}
+} */
 
-.content-description {
+/* .content-description {
     border: 3px solid rgb(126, 113, 70);
     height: 100px;
     width: 100px;
     overflow: hidden;
-}
+} */

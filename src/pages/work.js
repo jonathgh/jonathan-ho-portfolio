@@ -3,7 +3,6 @@ import "../styles/global.css"
 import Layout from "../components/Layout.js"
 import ContentItem from "../components/ContentItem"
 import SunsetShader from "../components/SunsetShader.js"
-// import Blob from '../components/BlobShader.js'
 import projectThumb01 from '../imgs/proj-thumb-01.jpg';
 
 
