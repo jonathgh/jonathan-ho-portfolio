@@ -1,8 +1,8 @@
 import * as THREE from "three"
 import React, { Suspense, useRef, useState } from "react"
 import { Canvas, useFrame, useResource } from "react-three-fiber"
-import { EffectComposer, DepthOfField, Bloom, Noise, Vignette } from "react-postprocessing"
-import { Html, Icosahedron, useTextureLoader, useCubeTextureLoader, MeshDistortMaterial } from "drei"
+import { EffectComposer, DepthOfField, Bloom, Noise, Vignette } from "@react-three/postprocessing" //"react-postprocessing"
+import { Html, Icosahedron, useTextureLoader, useCubeTextureLoader, MeshDistortMaterial } from '@react-three/drei'
 
 function MainSphere({ material }) {
   const main = useRef()
@@ -57,8 +57,8 @@ function Instances({ material }) {
 }
 
 function Scene() {
-  const bumpMap = useTextureLoader("/bump.jpg")
-  const envMap = useCubeTextureLoader(["px.png", "nx.png", "py.png", "ny.png", "pz.png", "nz.png"], { path: "/cube/" })
+  const bumpMap = useTextureLoader("../imgs/bump.jpg")
+  const envMap = useCubeTextureLoader(["px.png", "nx.png", "py.png", "ny.png", "pz.png", "nz.png"], { path: "../imgs/cube/" })
   // We use `useResource` to be able to delay rendering the spheres until the material is ready
   const [matRef, material] = useResource()
 
