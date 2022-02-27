@@ -1,24 +1,22 @@
 import React from "react"
 import "../styles/global.css"
 import Layout from "../components/Layout.js"
-import ContentItem from "../components/ContentItem"
 import SunsetShader from "../components/SunsetShader.js"
-import projectThumb01 from '../imgs/proj-thumb-01.jpg';
 
 import Gallery from '../components/Gallery'
 
 
-  const Art = () => {
+  const Work = () => {
     return (
         <div className="top-level-div">
             <div className="container disable-select">
                 <Layout />
                     <div className="page-top-center-text">
                         <div className="page-heading-title">
-                            ART
+                            Work
                         </div>
                         <div className="page-sub-heading">
-                            Creative Projects in Generative Art
+                            Client Projects
                         </div>
                         
                         <div className="content-grid">
@@ -31,4 +29,4 @@ import Gallery from '../components/Gallery'
     )
   }
   
-  export default Art
+  export default Work
