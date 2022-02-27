@@ -14,11 +14,12 @@ const GalleryItem = ({id, source, thumbnail, caption, description, position, tog
         href={source}
         onClick={onClick}
         >
-        <img src={thumbnail} />
+        <img className="project-thumb" src={thumbnail} />
         </a>
-
-        <h3>{caption}</h3>
-        <p>{description}</p>
+        <div className='project-description-text'>
+            <h3>{caption}</h3>
+            <p>{description}</p>
+        </div>
     </article>)
 };
 
