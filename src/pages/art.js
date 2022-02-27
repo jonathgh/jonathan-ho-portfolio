@@ -22,11 +22,6 @@ import Gallery from '../components/Gallery'
                         </div>
                         
                         <div className="content-grid">
-                            
-                            {/* <ContentItem thumbSrc={projectThumb01} thumbAlt={"project thumbnail"} description={"Proident ullamco laborum reprehenderit anim cillum. Minim incididunt aliquip ipsum sunt qui eiusmod irure consectetur labore incididunt commodo elit adipisicing. Eiusmod cillum laborum laboris adipisicing do dolor sunt adipisicing occaecat id aliqua. Irure do voluptate minim reprehenderit. Ullamco cupidatat duis Lorem velit nisi aliqua est dolore ut excepteur id laborum anim adipisicing."} />
-                            <ContentItem thumbSrc={projectThumb01} thumbAlt={"project thumbnail"} description={"Proident ullamco laborum reprehenderit anim cillum. Minim incididunt aliquip ipsum sunt qui eiusmod irure consectetur labore incididunt commodo elit adipisicing. Eiusmod cillum laborum laboris adipisicing do dolor sunt adipisicing occaecat id aliqua. Irure do voluptate minim reprehenderit. Ullamco cupidatat duis Lorem velit nisi aliqua est dolore ut excepteur id laborum anim adipisicing."} />
-                            <ContentItem thumbSrc={projectThumb01} thumbAlt={"project thumbnail"} description={"Proident ullamco laborum reprehenderit anim cillum. Minim incididunt aliquip ipsum sunt qui eiusmod irure consectetur labore incididunt commodo elit adipisicing. Eiusmod cillum laborum laboris adipisicing do dolor sunt adipisicing occaecat id aliqua. Irure do voluptate minim reprehenderit. Ullamco cupidatat duis Lorem velit nisi aliqua est dolore ut excepteur id laborum anim adipisicing."} />
-                            <ContentItem thumbSrc={projectThumb01} thumbAlt={"project thumbnail"} description={"Proident ullamco laborum reprehenderit anim cillum. Minim incididunt aliquip ipsum sunt qui eiusmod irure consectetur labore incididunt commodo elit adipisicing. Eiusmod cillum laborum laboris adipisicing do dolor sunt adipisicing occaecat id aliqua. Irure do voluptate minim reprehenderit. Ullamco cupidatat duis Lorem velit nisi aliqua est dolore ut excepteur id laborum anim adipisicing."} /> */}
                             <Gallery />
                         </div>
                     </div>
