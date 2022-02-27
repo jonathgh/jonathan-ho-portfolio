@@ -63,7 +63,7 @@ export const WORK_IMAGES = [
   {
     id: '2',
     source: hmh_02,
-    thumbnail: hmh_01,
+    thumbnail: hmh_06,
     caption: 'Lindsey Stirling: Hold My Heart',
     description: `Role: VFX Supervisor; A music video for 
     Lindsey Stirling inspired by Alice in Wonderland. 
@@ -91,6 +91,16 @@ export const WORK_IMAGES = [
     ideated and animated this short motion 
     graphic logo into.
     https://www.youtube.com/watch?v=2xoINx_EY40`,
+  },
+  {
+    id: '5',
+    source: wall_of_sticks_01,
+    thumbnail: wall_of_sticks_02,
+    caption: 'Jason Weber: Wall of Sticks Music Video',
+    description: `Role: Visual Effects Artist; 
+    As a VFX artist, I was responsible for compositing and fx
+    comping in this music video for Jason Weber. 
+    https://vimeo.com/94489187`,
   }
 ]
 
