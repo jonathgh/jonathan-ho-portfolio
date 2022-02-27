@@ -39,6 +39,7 @@ const About = () => {
         </div>
         <SunsetShader />
       </div>
+      <div className="background-clr"></div>
     </div>
   )
 }

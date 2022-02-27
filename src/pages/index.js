@@ -27,6 +27,7 @@ const App = () => {
             </div>
 
         </div>
+        <div className="background-clr"></div>
   </div>
     )
 }

@@ -38,7 +38,7 @@ const WaveShaderMaterial = shaderMaterial(
     // Written by GLtracy
     
     // math const
-    //const float PI = 3.14159265359;
+    // const float PI = 3.14159265359;
     const float MAX = 10000.0;
     
     // ray intersects sphere
@@ -191,7 +191,7 @@ const WaveShaderMaterial = shaderMaterial(
         vec3 eye = vec3( 0.0, 0.0, 3.0 );
     
         // rotate camera
-        mat3 rot = rot3xy( vec2( 0.0, iTime * 0.5 ) );
+        mat3 rot = rot3xy( vec2( 0.0, iTime * 0.4) );
         dir = rot * dir;
         eye = rot * eye;
         
@@ -223,7 +223,7 @@ const WaveShaderMaterial = shaderMaterial(
   const Plane = () => {
       const ref = useRef();
       useFrame(({ clock }) => {
-          (ref.current.iTime = clock.getElapsedTime())
+          (ref.current.iTime = clock.getElapsedTime() + 3.2)
           ref.current.iResolution = new THREE.Vector3(1.0 * window.innerWidth, 1.0 * window.innerHeight, 1.0)
       });
   

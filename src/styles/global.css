@@ -12,6 +12,14 @@ body,
   padding: 0;
 }
 
+.background-clr {
+    z-index: -2;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
 .container {
     position: absolute;
     height: 100%;
@@ -130,9 +138,10 @@ Canvas {
     grid-column: 1/ 6; */
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 0;
     top: 0;
     left: 0;
+    /* animation: fadeIn 5s ease-in 0s 1 ; */
   }
 
 .scene {
@@ -253,10 +262,11 @@ article {
     width: 35vw;
     align-items: center;
     justify-content: center;
-    
+    object-fit: cover;
     /* position: relative; */
     /* width: 42.5vw; */
     height: 22vw;
+    overflow: hidden;
     /* max-width: 42.5vw; */
     /* object-fit: cover; */
     /* height: 22vw; */
@@ -266,10 +276,12 @@ article {
 .project-thumb {
     /* object-fit: fill; */
     width: 80%;
+    /* object-fit: contain; */
     border-radius: 10px;
     opacity: 85%;
     animation: fadeIn 0.3s ease-in 0s 1 ;
     justify-content: center;
+    /* overflow: hidden; */
 }
 
 .project-thumb:hover {

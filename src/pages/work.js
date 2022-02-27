@@ -2,8 +2,8 @@ import React from "react"
 import "../styles/global.css"
 import Layout from "../components/Layout.js"
 import SunsetShader from "../components/SunsetShader.js"
-
 import Gallery from '../components/Gallery'
+import { WORK_IMAGES } from '../components/Gallery/constants/galleryImages'
 
 
   const Work = () => {
@@ -20,11 +20,12 @@ import Gallery from '../components/Gallery'
                         </div>
                         
                         <div className="content-grid">
-                            <Gallery />
+                            <Gallery images={ WORK_IMAGES } />
                         </div>
                     </div>
                     <SunsetShader />   
             </div>
+            <div className="background-clr"></div>
         </div>
     )
   }

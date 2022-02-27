@@ -15,10 +15,10 @@ const SunsetShaderMaterial = shaderMaterial(
       iTime: 0,
       iResolution: new THREE.Vector3(
         1.0 * window.innerWidth,
-        1.0 * window.innerWidth,
+        1.0 * window.innerHeight,
         1.0
       ),
-      iMouse: new THREE.Vector2(100.0, 200.0)
+      iMouse: new THREE.Vector2(1.0 * window.innerWidth, 1.0 * window.innerHeight)
     },
   
     // Vertex Shader

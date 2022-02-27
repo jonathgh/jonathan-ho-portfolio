@@ -1,11 +1,9 @@
 import React from "react"
 import "../styles/global.css"
 import Layout from "../components/Layout.js"
-import ContentItem from "../components/ContentItem"
 import SunsetShader from "../components/SunsetShader.js"
-import projectThumb01 from '../imgs/proj-thumb-01.jpg';
-
 import Gallery from '../components/Gallery'
+import { ART_IMAGES } from '../components/Gallery/constants/galleryImages'
 
 
   const Art = () => {
@@ -22,11 +20,12 @@ import Gallery from '../components/Gallery'
                         </div>
                         
                         <div className="content-grid">
-                            <Gallery />
+                            <Gallery images={ ART_IMAGES }/>
                         </div>
                     </div>
                     <SunsetShader />   
             </div>
+            <div className="background-clr"></div>
         </div>
     )
   }
