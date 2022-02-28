@@ -8,8 +8,8 @@ import * as THREE from "three"
 import "../styles/global.css"
 
 const isBrowser = typeof window !== "undefined"
-let windowH = 0.0;
-let windowW = 0.0;
+let windowH = 1920.0;
+let windowW = 1080.0;
 
 if (isBrowser) {
   windowH = window.innerHeight;
