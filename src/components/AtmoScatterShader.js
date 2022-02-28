@@ -1,31 +1,39 @@
 import React, { useRef, Suspense } from "react"
-import { Link } from 'gatsby'
+import { Link } from "gatsby"
 import { Canvas, extend, useFrame } from "@react-three/fiber"
 import { shaderMaterial, OrthographicCamera } from "@react-three/drei"
 import glsl from "babel-plugin-glsl/macro"
 import * as THREE from "three"
 import "../styles/three.css"
 
+const isBrowser = typeof window !== "undefined"
+let windowH = 0.0
+let windowW = 0.0
+if (isBrowser) {
+  windowH = window.innerHeight
+  windowW = window.innerWidth
+}
+
 //credit: https://cat-change-b22.notion.site/Wave-Shader-0fa66aef851745248a99153f3a479124
 
 const WaveShaderMaterial = shaderMaterial(
-    // Uniforms
-      { 
-          iTime: 0,
-          iResolution: new THREE.Vector3(1.0 * window.innerWidth, 1.0 * window.innerWidth, 1.0) //1.0 * window.innerWidth, 1.0 * window.innerHeight, 1.0
-      },
-  
-    // Vertex Shader
-    glsl`
+  // Uniforms
+  {
+    iTime: 0,
+    iResolution: new THREE.Vector3(1.0 * windowW, 1.0 * windowW, 1.0),
+  },
+
+  // Vertex Shader
+  glsl`
       varying vec2 vUv;
       void main() {
           vUv = uv;
           gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
       }
       `,
-  
-    // Fragment Shader
-    glsl`
+
+  // Fragment Shader
+  glsl`
     precision highp float;
     #include <common>
      
@@ -216,56 +224,63 @@ const WaveShaderMaterial = shaderMaterial(
       mainImage(gl_FragColor, gl_FragCoord.xy);
     }
       `
-  )
-  
-  extend({ WaveShaderMaterial })
-  
-  const Plane = () => {
-      const ref = useRef();
-      useFrame(({ clock }) => {
-          (ref.current.iTime = clock.getElapsedTime() + 3.2)
-          ref.current.iResolution = new THREE.Vector3(1.0 * window.innerWidth, 1.0 * window.innerHeight, 1.0)
-      });
-  
-      return (
-        <mesh>
-          <planeBufferGeometry args={[50, 50]} />
-          <waveShaderMaterial ref={ref} />
-        </mesh>
-      );
-    };
-  
-  // const Camera = () => {
-  //     const cam = useRef()
-  //     const { setDefaultCamera } = useThree()
-  //     useLayoutEffect(() => setDefaultCamera(cam.current), [])
-  //     return <orthographicCamera ref={ref} left={ -1 } right={ 1 } top={ 1 } bottom={ -1 } near={ -1 } far={ 1 } />
-  // }
-  
-  const Scene = () => {
-    return (
-      <Canvas className="cnv" > 
-          
-          <Suspense fallback={null}>
-              {/* <Camera /> */}
-              {/* <OrthographicCamera makeDefault left={ -1 } right={ 1 } top={ 1 } bottom={ -1 } near={ -1 } far={ 1 }> */}
-                  <Plane />
-              {/* </OrthographicCamera> */}
-              
-          </Suspense>
-      </Canvas>
-    )
+)
+
+extend({ WaveShaderMaterial })
+
+const Plane = () => {
+  const isBrowser = typeof window !== "undefined"
+
+  const ref = useRef()
+  if (isBrowser) {
+    useFrame(({ clock }) => {
+      if (isBrowser) {
+        windowH = window.innerHeight
+        windowW = window.innerWidth
+      }
+      ref.current.iTime = clock.getElapsedTime() + 3.2
+      ref.current.iResolution = new THREE.Vector3(
+        1.0 * windowW,
+        1.0 * windowH,
+        1.0
+      )
+    })
   }
 
+  return (
+    <mesh>
+      <planeBufferGeometry args={[50, 50]} />
+      <waveShaderMaterial ref={ref} />
+    </mesh>
+  )
+}
 
+// const Camera = () => {
+//     const cam = useRef()
+//     const { setDefaultCamera } = useThree()
+//     useLayoutEffect(() => setDefaultCamera(cam.current), [])
+//     return <orthographicCamera ref={ref} left={ -1 } right={ 1 } top={ 1 } bottom={ -1 } near={ -1 } far={ 1 } />
+// }
 
+const Scene = () => {
+  return (
+    <Canvas className="cnv">
+      <Suspense fallback={null}>
+        {/* <Camera /> */}
+        {/* <OrthographicCamera makeDefault left={ -1 } right={ 1 } top={ 1 } bottom={ -1 } near={ -1 } far={ 1 }> */}
+        <Plane />
+        {/* </OrthographicCamera> */}
+      </Suspense>
+    </Canvas>
+  )
+}
 
 export default function AtmoScatterShader() {
   return (
-    <div className='scatter-top-level-div'>
-       <div className="cnv-container">
-            <Scene className="scn" />
-        </div>
+    <div className="scatter-top-level-div">
+      <div className="cnv-container">
+        <Scene className="scn" />
+      </div>
     </div>
   )
 }

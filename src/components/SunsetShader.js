@@ -7,6 +7,16 @@ import glsl from "babel-plugin-glsl/macro"
 import * as THREE from "three"
 import "../styles/global.css"
 
+const isBrowser = typeof window !== "undefined"
+let windowH = 0.0;
+let windowW = 0.0;
+
+if (isBrowser) {
+  windowH = window.innerHeight;
+  windowW = window.innerWidth;
+}
+
+
 //credit: https://cat-change-b22.notion.site/Wave-Shader-0fa66aef851745248a99153f3a479124
 
 const SunsetShaderMaterial = shaderMaterial(
@@ -14,11 +24,11 @@ const SunsetShaderMaterial = shaderMaterial(
     {
       iTime: 0,
       iResolution: new THREE.Vector3(
-        1.0 * window.innerWidth,
-        1.0 * window.innerHeight,
+        1.0 * windowW,
+        1.0 * windowH,
         1.0
       ),
-      iMouse: new THREE.Vector2(1.0 * window.innerWidth, 1.0 * window.innerHeight)
+      iMouse: new THREE.Vector2(1.0 * windowW, 1.0 * windowH)
     },
   
     // Vertex Shader
@@ -135,26 +145,35 @@ const SunsetShaderMaterial = shaderMaterial(
   extend({ SunsetShaderMaterial })
   
   const Plane = () => {
+    const isBrowser = typeof window !== "undefined";
+
     const ref = useRef()
+    if (isBrowser) {
+      let mousePos = useMousePosition();
+        console.log(new THREE.Vector3(
+            1.0 * windowW,
+            1.0 * windowH,
+            1.0
+          ))
+    ;
+        
   
-    let mousePos = useMousePosition();
-      console.log(new THREE.Vector3(
-          1.0 * window.innerWidth,
-          1.0 * window.innerHeight,
-          1.0
-        ));
-  
-  
-  
+    
     useFrame(({ clock }) => {
+      if (isBrowser) {
+        windowH = window.innerHeight;
+        windowW = window.innerWidth;
+      }
+      
       ref.current.iTime = clock.getElapsedTime()
       ref.current.iResolution = new THREE.Vector3(
-        1.0 * window.innerWidth,
-        1.0 * window.innerHeight,
+        1.0 * windowW,
+        1.0 * windowH,
         1.0
       )
       ref.current.iMouse = new THREE.Vector2(1.0 * mousePos.mouseX, 1.0 * mousePos.mouseY)
     })
+  }
   
     return (
       <mesh>
